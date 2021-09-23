@@ -9,7 +9,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="vsp",
-    version="0.0.1",
+    version="0.0.2",
     description="Video Stream Processor",
     license="GPLv3",
     long_description=long_description,
