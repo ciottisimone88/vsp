@@ -449,10 +449,13 @@ class CvImageInputFileSeq(VideoInputStream):
 
     def open(self):
         self.filename_root, self.filename_ext = os.path.splitext(self.filename)
-        self.frame_id = 0
+        # self.frame_id = 0
+        self.frame_id = 1
 
     def read(self):
-        frame = cv2.imread(self.filename_root + '_' + str(self.frame_id) + self.filename_ext,
+        # frame = cv2.imread(self.filename_root + '_' + str(self.frame_id) + self.filename_ext,
+        #                    cv2.IMREAD_UNCHANGED)
+        frame = cv2.imread(self.filename_root + str(self.frame_id) + self.filename_ext,
                            cv2.IMREAD_UNCHANGED)
         if frame is None:
             raise EOFError
